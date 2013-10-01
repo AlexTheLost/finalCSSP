@@ -1,0 +1,245 @@
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script
+    src="http://jashkenas.github.com/coffee-script/extras/coffee-script.js"
+></script>
+
+<script type="text/coffeescript">
+            class URLs
+                @urls: []
+                constructor: ->
+                    @urls = []
+
+                new URLs()
+
+            class Gallery
+                self = []
+                @urls: []
+                @index: 0
+
+                constructor: ->
+                    self = @
+                    img = new Image()
+                    urls = []
+                    urls.push '../images/test1.jpg'
+                    urls.push '../images/test2.jpg'
+                    urls.push '../images/test3.jpg'
+                    urls.push '../images/test4.jpg'
+                    @urls = urls
+                    @index = 0
+                    @currentImg = 1
+
+                swapImgUrl: (firs_url, second_url) ->
+                    firs_index = 0
+                    second_index = 0
+                    i = 0
+                    for url in @urls
+                        if url == firs_url
+                            firs_index = i                        
+                        if url == second_url
+                            second_index = i
+                        i += 1
+                    @urls[firs_index] = second_url
+                    @urls[second_index] = firs_url
+
+                getFirst: ->
+                    return @urls[0]
+
+                iterator: (first) ->              
+                    return new IteratorImg(first)
+
+                class IteratorImg
+                    @index: 0
+                    @max: 0
+                    @mix: 0
+
+                    constructor: (first)->
+                        @urls = self.urls
+                        @index = first                    
+                        @max = @urls.length - 1
+                        @min = 0
+
+                    nextURL: () ->                                        
+                        if @index < @max
+                            @index += 1
+                        url = @urls[@index]
+                        return url  
+
+                    hasNext: () ->                 
+                        if @index < @max
+                            return true
+                        return false
+
+                    prevURL: () ->                    
+                        if @index > @min
+                            @index -= 1
+                        url = @urls[@index]                                         
+                        return url  
+
+                    hasPrev: () ->
+                        if @index > @min
+                            return true
+                        return false 
+
+            gallery = new Gallery()
+            $('#mainImg').attr('src', gallery.getFirst())
+            mainIterator = gallery.iterator(0)        
+
+            $('#buttonNext').click ->
+                scrollspeed = parseInt($('#scrollspeed').val())
+                $('#mainImg').hide(
+                    "slide", 
+                    {direction: "left" }, 
+                    scrollspeed,
+                    -> $('#mainImg').attr('src', mainIterator.nextURL())
+                    );
+                $('#mainImg').show(
+                    "slide", 
+                    {direction: "right" }, 
+                    scrollspeed
+                    );
+            
+            $('#buttonPrev').click ->
+                scrollspeed = parseInt($('#scrollspeed').val())
+                $('#mainImg').hide(
+                    "slide", 
+                    {direction: "right" }, 
+                    scrollspeed,
+                    -> $('#mainImg').attr('src', mainIterator.prevURL())
+                    );
+                $('#mainImg').show(
+                    "slide", 
+                    {direction: "left" }, 
+                    scrollspeed
+                    );
+
+            $("#setIcon").ready ->                
+                setIcon = document.getElementById('setIcon').getElementsByTagName('img')
+                setIconIterator = gallery.iterator(-1)
+                for icon in setIcon
+                    if setIconIterator.hasNext()
+                        $(icon).attr('src', setIconIterator.nextURL()) 
+
+            $( "#icon1" ).draggable({ revert: true });
+            $( "#icon2" ).draggable({ revert: true });
+            $( "#icon3" ).draggable({ revert: true });
+            $( "#icon4" ).draggable({ revert: true });
+
+            spawnImg = (firsImg, secondImg) ->
+                firsImgURL = firsImg.attr("src")
+                secondImgURL = secondImg.attr("src")
+                firsImg.attr("src", secondImgURL)
+                secondImg.attr("src", firsImgURL)
+                gallery.swapImgUrl(firsImgURL, secondImgURL)            
+
+            $( "#icon1" ).droppable({
+                drop: (event, ui) ->
+                    spawnImg(ui.draggable, $(@))
+            }); 
+            $( "#icon2" ).droppable({
+                drop: (event, ui) ->
+                    spawnImg(ui.draggable, $(@))
+            });
+            $( "#icon3" ).droppable({
+                drop: (event, ui) ->
+                    spawnImg(ui.draggable, $(@))
+            });
+            $( "#icon4" ).droppable({
+                drop: (event, ui) ->
+                    spawnImg(ui.draggable, $(@))
+            });
+        </script>
+<style type="text/css">
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+}
+
+.ui-widget-content {
+	border: solid 1px #999;
+	float: left;
+	height: 5%;
+	width: 5%;
+	margin-left: 0.5%;
+	margin-top: 1%
+}
+
+#mainImg {
+	width: 80%;
+	height: 80%;
+	left: 10%;
+	position: relative;
+	border: solid;
+}
+
+#setIcon {
+	left: 38%;
+	position: relative;
+	background: white;
+}
+
+#buttonsArea {
+	left: 45%;
+	position: relative;
+}
+
+.buttons {
+	border-radius: 20px/60px;
+	background: white;
+}
+
+#settingArea {
+	left: 15%;
+	margin-left: 10%;
+	margin-top: 5%;
+	position: relative;
+}
+
+.mac {
+	display: block;
+	border: none;
+	border-radius: 20px;
+	padding: 5px 8px;
+	color: #333;
+	box-shadow: inset 0 2px 0 rgba(0, 0, 0, .2), 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.mac:focus {
+	outline: none;
+	box-shadow: inset 0 2px 0 rgba(0, 0, 0, .2), 0 0 4px rgba(0, 0, 0, 0.1),
+		0 0 5px 1px #51CBEE;
+}
+</style>
+</head>
+<body>
+    <div>
+        <img id='mainImg'>
+    </div>
+    <div id='buttonsArea'>
+        <input type='button' class='buttons' value='prev slide'
+            id='buttonPrev'
+        /> <input type='button' class='buttons' value='next slide'
+            id='buttonNext'
+        />
+    </div>
+    <div id='setIcon'>
+        <img id='icon1' class='ui-widget-content' /> <img id='icon2'
+            class='ui-widget-content'
+        /> <img id='icon3' class='ui-widget-content' /> <img id='icon4'
+            class='ui-widget-content'
+        />
+    </div>
+    <div id='settingArea'>
+        scroll speed(in ms.):<input id="scrollspeed" class="mac"
+            type="text" value="500"
+        />
+    </div>
+</body>
+</html>
