@@ -16,9 +16,9 @@
 
 <script type="text/coffeescript">
     $('#galleryName').ready ->
-        #$('#galleryName').attr('name', window.dialogArguments)
-        $('#galleryName').attr('value', window.dialogArguments)
+        $('#galleryName').attr('value', '<%= request.getParameter("galleryName").toString()%>')
         $('#galleryName').show()
+
     apiPrefix = 'http://api.oboobs.ru/boobs/'
     mediaPrefix = 'http://media.oboobs.ru/boobs/'
     $('#getBoobs').click ->
@@ -29,7 +29,6 @@
         $.get(url, (data) ->
             len = data.length
             for i in [0...len]
-                #alert '!'
                 src = data[i]['preview'].replace('boobs_preview/','')
                 url = mediaPrefix + src
                 #$('#setBoobs').add('img').attr('src', url)
@@ -47,7 +46,6 @@
             $('#urlImg').attr('value', imgUrl)
             $('#urlImg').show()
             $('#loadImg').show()
-
 </script>
 
 </head>
@@ -57,7 +55,7 @@
         Count: <input type='text' id='count' value='5' /><br />
         <input type='button' id='getBoobs' value='get' /><br />        
     </div>
-    <img id="uploadImg" style="height: 40px;"" alt="The image is not selected." hidden='true'>
+    <img id="uploadImg" style="height: 40px;" alt="The image is not selected." hidden='true'>
     <form action='getUploadImgUrl' method='post' >
         Load in: <input type="text" id="galleryName" name="galleryName" value="url" readonly="true" hidden="true" >
          image <input type="text" id="urlImg" name="url" value="url" readonly="true" hidden="true" > 

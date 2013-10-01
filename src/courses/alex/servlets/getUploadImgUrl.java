@@ -3,6 +3,7 @@ package courses.alex.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -44,10 +45,13 @@ public class getUploadImgUrl extends HttpServlet {
 
         String url = request.getParameter("url");
         String galleryName = request.getParameter("galleryName");
+        System.out.println(url);
         LoadFromUrl.loadImage(url, galleryName);
-        PrintWriter out = response.getWriter();
-        out.println("Image uploaded!");
-        out.close();
+
+		request.setAttribute("galleryName", galleryName);
+        RequestDispatcher dispatcher = getServletContext()
+                .getRequestDispatcher("/gallery.jsp");
+        dispatcher.forward(request, response);
     }
 
 }

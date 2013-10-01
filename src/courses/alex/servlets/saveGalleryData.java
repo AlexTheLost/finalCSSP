@@ -62,7 +62,7 @@ public class saveGalleryData extends HttpServlet {
 		String galleryName = request.getParameter("galleryName");
 		request.setAttribute("galleryName", galleryName);
         RequestDispatcher dispatcher = getServletContext()
-                .getRequestDispatcher("/WEB-INF/jsp/gallery.jsp");
+                .getRequestDispatcher("/gallery.jsp");
         dispatcher.forward(request, response);
 	}
 

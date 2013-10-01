@@ -44,7 +44,7 @@ public class getGalleryContents extends HttpServlet {
         request.setAttribute("galleryName", galleryName);
 
         RequestDispatcher dispatcher = getServletContext()
-                .getRequestDispatcher("/WEB-INF/jsp/gallery.jsp");
+                .getRequestDispatcher("/gallery.jsp");
         dispatcher.forward(request, response);
     }
 

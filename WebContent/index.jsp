@@ -22,13 +22,6 @@
 			<%=new java.util.Date()%>
 		</p>
 	</div>
-	<div id="new-gallery" class='decorTop'>
-		<p>New gallery:</p>
-		<form action='' method='post'>
-			<input type='text' name='gallery-name' class='mac' value='NAME'>
-			<input type='submit' value='Create' class='mac' />
-		</form>
-	</div>
 	<%
 		List<String> galleryNames = DataProvider.GetNamesOfGalleries();
 		Iterator<String> itGN = galleryNames.iterator();
