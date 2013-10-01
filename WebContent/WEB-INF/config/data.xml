@@ -1,27 +1,6 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <galleries>
     <gallery name="Gallery">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <image contrast="" effect="grayscale(100%)" moving="blind" scrollSpeed="100" sharpness="" src="05817.jpg"/>
 <image contrast="" effect="grayscale(100%)" moving="blind" scrollSpeed="" sharpness="" src="06677.jpg"/>
 <image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="03559.jpg"/>
@@ -33,5 +12,6 @@
 <image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="05686.jpg"/>
 <image contrast="" effect="" moving="size" scrollSpeed="1000" sharpness="" src="test1.jpg"/>
 <image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="01695.jpg"/>
+<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="06953.jpg"/>
 </gallery>
 </galleries>

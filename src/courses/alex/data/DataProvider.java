@@ -1,6 +1,5 @@
 package courses.alex.data;
 
-//import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,8 +12,7 @@ import org.w3c.dom.Element;
 import java.io.File;
 
 public class DataProvider {
-    // private static String path = "F:\\workspace\\CSSP\\WebContent\\images";
-    private static String path           = "F:\\ws\\test\\WebContent\\WEB-INF\\config\\data.xml";
+    private static String path           = Paths.shortPathToXmlData;
     private static String galleryTagName = "gallery";
     private static String prefixImage = "resources/images";
 

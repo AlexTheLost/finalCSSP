@@ -20,8 +20,8 @@ import org.w3c.dom.Element;
 
 public class LoadFromUrl {
 
-    static String prefixSrc = "F:\\ws\\test\\WebContent\\resources\\images\\";
-    private static String path = "F:\\ws\\test\\WebContent\\WEB-INF\\config\\data.xml";
+    static String prefixSrc = Paths.shortPathToImg;
+    private static String path = Paths.shortPathToXmlData;
 
     public static void loadImage(String url, String galleryName) {
         try {
