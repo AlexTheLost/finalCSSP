@@ -22,8 +22,44 @@
 		<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="05838.jpg"/>
 	</gallery>
 	<gallery name="TestGallery2">
-<image contrast="" effect="blur(45px)" moving="size" scrollSpeed="100" sharpness="" src="test1.jpg"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="05817.jpg"/>
-<image contrast="" effect="sepia(100%)" moving="" scrollSpeed="" sharpness="" src="test2.jpg"/>
+<image contrast="" effect="" moving="size" scrollSpeed="100" sharpness="" src="test1.jpg"/>
 </gallery>
 </galleries>

@@ -153,10 +153,30 @@
     gallery = new Gallery(imgs)
     mainImgIterator = gallery.iterator()
 
+    getCurrentMoving = ->
+        currentImg = mainImgIterator.getCurrentImg()
+        moving = currentImg.moving
+        if moving == ""
+            return 'blind'
+        return moving
+
+    getCurrentscrollSpeed = ->
+        currentImg = mainImgIterator.getCurrentImg()
+        scrollSpeed = currentImg.scrollSpeed
+        if scrollSpeed == ""
+            return '1000'
+        return scrollSpeed
+
+    clickAllNeeded = ->
+        $('#scrollSpeed').attr('value', getCurrentscrollSpeed())
+        moving = "#" + getCurrentMoving()
+        $(moving).click()
+
     setCurrentEffect = ->
         currentImg = mainImgIterator.getCurrentImg()
         currentEffect = currentImg.effect
         $('#mainImg').css('-webkit-filter', currentEffect)
+        clickAllNeeded()
 
     setCurrentEffect()
 
@@ -226,20 +246,6 @@
             scrollSpeed,
         );
 
-    getCurrentMoving = ->
-        currentImg = mainImgIterator.getCurrentImg()
-        moving = currentImg.moving
-        if moving == ""
-            return 'blind'
-        return moving
-
-    getCurrentscrollSpeed = ->
-        currentImg = mainImgIterator.getCurrentImg()
-        scrollSpeed = currentImg.scrollSpeed
-        if scrollSpeed == ""
-            return '1000'
-        return scrollSpeed
-
     $('#scrollSpeed').change ->
         currentImg = mainImgIterator.getCurrentImg()
         currentImg.scrollSpeed = $(@).val()
@@ -294,6 +300,7 @@
         gallery.delete(src)
         deleteIcon(src)
         setNextImg()
+        setCurrentEffect()
 
     deleteIcon = (src) ->
         setIcon = document.getElementById('setIcon').getElementsByTagName('img')
