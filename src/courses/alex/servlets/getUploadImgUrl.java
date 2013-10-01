@@ -42,15 +42,12 @@ public class getUploadImgUrl extends HttpServlet {
             HttpServletResponse response) throws ServletException, IOException {
         // TODO Auto-generated method stub
         request.setCharacterEncoding("utf-8");
-
         String url = request.getParameter("url");
         String galleryName = request.getParameter("galleryName");
-        System.out.println(url);
         LoadFromUrl.loadImage(url, galleryName);
-
-		request.setAttribute("galleryName", galleryName);
+        request.setAttribute("galleryName", galleryName);
         RequestDispatcher dispatcher = getServletContext()
-                .getRequestDispatcher("/gallery.jsp");
+                .getRequestDispatcher("/getGalleryContents");
         dispatcher.forward(request, response);
     }
 

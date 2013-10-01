@@ -39,10 +39,8 @@ public class getGalleryContents extends HttpServlet {
             HttpServletResponse response) throws ServletException, IOException {
         // TODO Auto-generated method stub
         request.setCharacterEncoding("utf-8");
-
         String galleryName = request.getParameter("galleryName");
         request.setAttribute("galleryName", galleryName);
-
         RequestDispatcher dispatcher = getServletContext()
                 .getRequestDispatcher("/gallery.jsp");
         dispatcher.forward(request, response);

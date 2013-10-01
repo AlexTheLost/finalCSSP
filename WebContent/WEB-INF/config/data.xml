@@ -1,32 +1,37 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <galleries>
-	<gallery name="TestGallery">
-		<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="test16.jpg"/>
-		<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="test5.jpg"/>
-		<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="test6.jpg"/>
-		<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="test7.jpg"/>
-		<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="test8.jpg"/>
-		<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="test9.jpg"/>
-		<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="test10.jpg"/>
-		<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="test11.jpg"/>
-		<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="test15.jpeg"/>
-		<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="test17.jpg"/>
-		<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="test18.PNG"/>
-		<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="test19.jpg"/>
-		<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="test1.jpg"/>
-		<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="test2.jpg"/>
-		<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="test3.jpg"/>
-		<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="test4.jpg"/>
-		<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="04748.jpg"/>
-		<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="04424.jpg"/>
-		<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="05838.jpg"/>
-	</gallery>
-	<gallery name="TestGallery2">
-<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="05817.jpg"/>
-<image contrast="" effect="" moving="size" scrollSpeed="100" sharpness="" src="test1.jpg"/>
-<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="04748.jpg"/>
-<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="06677.jpg"/>
-<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="04748.jpg"/>
-<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="06677.jpg"/>
+    <gallery name="Gallery">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<image contrast="" effect="grayscale(100%)" moving="blind" scrollSpeed="100" sharpness="" src="05817.jpg"/>
+<image contrast="" effect="grayscale(100%)" moving="blind" scrollSpeed="" sharpness="" src="06677.jpg"/>
+<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="03559.jpg"/>
+<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="04762.jpg"/>
+<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="04424.jpg"/>
+<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="04129.jpg"/>
+<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="06111.jpg"/>
+<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="04274.jpg"/>
+<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="05686.jpg"/>
+<image contrast="" effect="" moving="size" scrollSpeed="1000" sharpness="" src="test1.jpg"/>
+<image contrast="" effect="" moving="" scrollSpeed="" sharpness="" src="01695.jpg"/>
 </gallery>
 </galleries>
